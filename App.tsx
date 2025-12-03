@@ -188,24 +188,29 @@ const App: React.FC = () => {
     const [page, setPage] = useState<Page>(Page.Home);
 
     const renderPage = () => {
-        switch (page) {
-            case Page.Apply:
-                return <ApplicationForm />;
-            case Page.Curriculum:
-                return <CurriculumInfo />;
-            case Page.Seating:
-                return <ExamSeating />;
-            case Page.AnnounceCandidates:
-                return <AnnounceCandidates />;
-            case Page.AnnounceResults:
-                return <AnnounceResults />;
-            case Page.Statistics:
-                return <Statistics />;
-            case Page.ADMIN:
-                return <AdminDashboard />;
-            case Page.Home:
-            default:
-                return <HomePage setPage={setPage}/>;
+        try {
+            switch (page) {
+                case Page.Apply:
+                    return <ApplicationForm />;
+                case Page.Curriculum:
+                    return <CurriculumInfo />;
+                case Page.Seating:
+                    return <ExamSeating />;
+                case Page.AnnounceCandidates:
+                    return <AnnounceCandidates />;
+                case Page.AnnounceResults:
+                    return <AnnounceResults />;
+                case Page.Statistics:
+                    return <Statistics />;
+                case Page.ADMIN:
+                    return <AdminDashboard />;
+                case Page.Home:
+                default:
+                    return <HomePage setPage={setPage}/>;
+            }
+        } catch (error) {
+            console.error("Render Error:", error);
+            return <div className="text-white text-center p-10">ขออภัย เกิดข้อผิดพลาดในการแสดงผลหน้าเว็บ กรุณารีเฟรชหน้าจอ</div>;
         }
     };
 
@@ -223,8 +228,8 @@ const App: React.FC = () => {
                     </div>
                     
                     <div className="flex flex-col items-center gap-3 bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-inner max-w-xs w-full transform hover:scale-105 transition-transform duration-300">
-                        <div className="relative">
-                            <div className="absolute inset-0 bg-blue-500 blur-lg opacity-20 rounded-full"></div>
+                        <div className="relative group">
+                            <div className="absolute inset-0 bg-blue-500 blur-lg opacity-20 rounded-full group-hover:opacity-40 transition-opacity duration-300"></div>
                             <img 
                                 src="https://i.postimg.cc/jjcn7W4f/phrn-pha-kha-prakxb.png" 
                                 alt="คุณครูภรนิพา คำประกอบ" 
@@ -236,7 +241,7 @@ const App: React.FC = () => {
                                 คุณครูภรนิพา คำประกอบ
                             </p>
                             <p className="text-slate-400 font-medium flex items-center justify-center gap-2 mt-1">
-                                <ShieldCheckIcon className="w-4 h-4" />
+                                <ShieldCheckIcon className="w-4 h-4 text-blue-400" />
                                 Web Admin
                             </p>
                         </div>

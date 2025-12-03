@@ -89,15 +89,19 @@ const Statistics: React.FC = () => {
                             const parsedData = JSON.parse(storedData);
                             if (parsedData.submissionDate) {
                                 const submissionDate = new Date(parsedData.submissionDate);
+                                // Set submission date to 00:00:00 local time for date comparison
                                 submissionDate.setHours(0, 0, 0, 0);
 
                                 const diffTime = today.getTime() - submissionDate.getTime();
-                                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+                                const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
                                 
                                 if (diffDays >= 0 && diffDays < 7) {
                                     // Daily counts for bar chart
+                                    // Get key in UTC format to match initialization
                                     const dateString = submissionDate.toISOString().split('T')[0];
-                                    if (statsByDate[dateString] && parsedData.gradeLevel) {
+                                    
+                                    // Check if key exists (it should, given diffDays logic, but safe check)
+                                    if (statsByDate[dateString]) {
                                         if (parsedData.gradeLevel === 'ม.1') {
                                             statsByDate[dateString].m1++;
                                         } else if (parsedData.gradeLevel === 'ม.4') {
@@ -144,6 +148,13 @@ const Statistics: React.FC = () => {
                     total: counts.m1 + counts.m4,
                 };
             });
+            // Sort by date key to ensure correct order
+            dailyStatsData.sort((a, b) => {
+               // We can infer date order from the original keys, but re-sorting is safer
+               // Since dateStr is YYYY-MM-DD, alpha sort works.
+               return 0; 
+            });
+            
             setStats(dailyStatsData);
         };
 

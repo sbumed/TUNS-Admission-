@@ -233,7 +233,7 @@ const App: React.FC = () => {
                             <img 
                                 src="https://i.postimg.cc/jjcn7W4f/phrn-pha-kha-prakxb.png" 
                                 alt="คุณครูภรนิพา คำประกอบ" 
-                                className="relative w-32 h-32 rounded-full object-cover border-4 border-slate-600 shadow-2xl"
+                                className="relative w-40 h-40 rounded-full object-cover border-4 border-slate-600 shadow-2xl"
                             />
                         </div>
                         <div className="text-center">

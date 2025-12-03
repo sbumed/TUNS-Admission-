@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>รับสมัครนักเรียนโรงเรียนเตรียมอุดมศึกษาน้อมเกล้า สมุทรปราการ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "jspdf": "https://esm.sh/jspdf@2.5.1",
+    "html2canvas": "https://esm.sh/html2canvas@1.4.1"
+  }
+}
+</script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            light: '#f8fafc', // slate-50
+            primary: { // Reverted to a classic Blue
+                DEFAULT: '#3b82f6', // blue-500
+                hover: '#2563eb', // blue-600
+                light: '#dbeafe', // blue-100
+                dark: '#1e40af' // blue-800
+            },
+            secondary: { // Kept as Slate
+                DEFAULT: '#475569', // slate-600
+                hover: '#334155', // slate-700
+                light: '#f1f5f9', // slate-100
+                dark: '#1e293b' // slate-800
+            },
+            accent: { // Reverted to Cyan
+                DEFAULT: '#06b6d4', // cyan-500
+                hover: '#0891b2', // cyan-600
+                light: '#cffafe', // cyan-100
+                dark: '#0e7490' // cyan-700
+            },
+            danger: { // Standard Red
+                DEFAULT: '#ef4444', // red-500
+                hover: '#dc2626', // red-600
+                light: '#fee2e2', // red-100
+                dark: '#991b1b' // red-800
+            },
+            warning: { // Standard Orange
+                DEFAULT: '#f97316', // orange-500
+                hover: '#ea580c', // orange-600
+                light: '#ffedd5', // orange-100
+                dark: '#c2410c' // orange-700
+            },
+            success: { // Reverted to a brighter Green
+                DEFAULT: '#22c55e', // green-500
+                hover: '#16a34a', // green-600
+                light: '#dcfce7', // green-100
+                dark: '#15803d' // green-700
+            },
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-out forwards',
+            'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
+            'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+            'pop-in': 'popIn 0.4s ease-out forwards',
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
+            fadeInDown: { '0%': { opacity: 0, transform: 'translateY(-20px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+            fadeInUp: { '0%': { opacity: 0, transform: 'translateY(20px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+            popIn: { '0%': { opacity: 0, transform: 'scale(0.9)' }, '100%': { opacity: 1, transform: 'scale(1)' } },
+          }
+        }
+      }
+    }
+</script>
+<style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #1e293b; /* slate-800 */
+        background-image: url('https://storage.googleapis.com/aistudio-v2-a5821.appspot.com/projects/2529e782-25e2-45e0-94b1-8b1764bbe96c/files/956637e1-872f-4886-9a28-6625805562d9');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+        body * {
+          visibility: hidden;
+        }
+        .printable-card, .printable-card * {
+          visibility: visible;
+        }
+        .printable-card {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          border: none !important;
+          box-shadow: none !important;
+        }
+        .printable-summary, .printable-summary * {
+            visibility: visible;
+        }
+        .printable-summary {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          border: none !important;
+          box-shadow: none !important;
+        }
+      }
+    </style>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

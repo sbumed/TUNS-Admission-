@@ -1,0 +1,8 @@
+{
+  "name": "TUNS Admission ภรนิพา",
+  "description": "An application for student admissions to Triamudom Suksa Nomklao Samutprakan School for grades 7 and 10, featuring curriculum details, exam seating information, and an AI-powered assistant.",
+  "requestFramePermissions": [
+    "geolocation",
+    "camera"
+  ]
+}

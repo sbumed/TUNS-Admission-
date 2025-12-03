@@ -70,6 +70,10 @@
         }
       }
     </script>
+    <script>
+      // Polyfill for process.env to prevent ReferenceError in browser
+      window.process = window.process || { env: {} };
+    </script>
     <style>
       html { scroll-behavior: smooth; }
       body {
@@ -91,15 +95,15 @@
         .printable-summary { position: absolute; left: 0; top: 0; width: 100%; border: none !important; box-shadow: none !important; }
       }
     </style>
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.1/",
     "react": "https://aistudiocdn.com/react@^19.2.1",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "html2canvas": "https://aistudiocdn.com/html2canvas@^1.4.1",
-    "jspdf": "https://aistudiocdn.com/jspdf@^3.0.4"
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "jspdf": "https://aistudiocdn.com/jspdf@^3.0.4",
+    "html2canvas": "https://aistudiocdn.com/html2canvas@^1.4.1"
   }
 }
 </script>
